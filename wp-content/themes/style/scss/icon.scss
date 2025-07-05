@@ -1,0 +1,28 @@
+.icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-color: #fff;
+  mask: no-repeat center center;
+  -webkit-mask: no-repeat center center;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  transition: background-color 0.3s;
+
+  // variants
+
+  &--arrow-right-down-line {
+    mask-image: url(../img/arrow-right-down-line.svg);
+    -webkit-mask-image: url(../img/arrow-right-down-line.svg);
+  }
+
+  &--tag {
+    mask-image: url(../img/tag.svg);
+    -webkit-mask-image: url(../img/tag.svg);
+  }
+
+  &--layers {
+    mask-image: url(../img/layers.svg);
+    -webkit-mask-image: url(../img/layers.svg);
+  }
+}

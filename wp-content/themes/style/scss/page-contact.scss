@@ -1,0 +1,173 @@
+// @import "mixins";
+// @import "vars";
+
+// .contact__adress {
+//   margin-bottom: 50px;
+//   font-family: 'Montserrat-Medium', sans-serif;
+//   font-size: 20px;
+
+//   span, p {
+//     margin-bottom: 30px;
+//     display: inline-block;
+
+//     &:last-child {
+//       margin-bottom: 0;
+//     }
+//   }
+// }
+
+// .contact__name {
+//   color: $accent;
+//   font-family: 'Montserrat-Bold', sans-serif;
+//   margin-bottom: 36px;
+// }
+
+// .contact__message {
+//   margin-bottom: 40px;
+
+//   .contact__social-list {
+//     list-style-type: none;
+
+//     li {
+//       display: flex;
+//       align-items: center;
+//       margin-bottom: 20px;
+
+//       &:last-child {
+//         margin-bottom: 0;
+//       }
+
+//       span {
+//         line-height: 1;
+//         font-family: 'Montserrat-Medium', sans-serif;
+//         font-size: 20px;
+//       }
+//     }
+//   }
+
+//   .contact__soc-icon {
+//     width: 25px;
+//     margin-right: 20px;
+//   }
+
+// }
+
+// .contact__working {
+//   line-height: 1;
+//   font-family: 'Montserrat-Medium', sans-serif;
+//   font-size: 20px;
+//   margin-bottom: 70px;
+// }
+
+// .wrap-form-img {
+//   width: 100%;
+//   height: 496px;
+//   padding: 20px;
+//   background-image: url("../img/form.jpg");
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   background-position: center;
+//   @include bp-md() {
+//     padding: 70px;
+//   }
+
+//   .form {
+//     display: inline-flex;
+//     flex-direction: column;
+//     width: 100%;
+
+//     .form__input {
+//       max-width: 360px;
+//       width: auto;
+//       height: 60px;
+//       background-color: #ffffff;
+//       outline: none;
+//       border: none;
+//       font-size: 18px;
+//       font-family: 'Montserrat-Medium', sans-serif;
+//       margin-bottom: 30px;
+//       padding-left: 20px;
+
+//       &::placeholder {
+//         font-size: 18px;
+//       }
+//     }
+
+//     .form__btn {
+//       color: #ffffff;
+//       font-size: 18px;
+//       font-family: 'Montserrat-Medium', sans-serif;
+//       max-width: 360px;
+//       width: 100%;
+//       height: 60px;
+//       outline: none;
+//       border: none;
+//       cursor: pointer;
+
+//     }
+
+//   }
+// }
+
+// .form__title {
+//   margin-bottom: 24px;
+//   line-height: 1;
+// }
+
+// .form__subtitle {
+//   font-size: 14px;
+//   font-family: 'Montserrat-Medium', sans-serif;
+//   margin-bottom: 54px;
+//   display: inline-block;
+//   @include bp-md() {
+//     font-size: 20px;
+//   }
+// }
+
+// .form {
+//   display: inline-flex;
+//   flex-direction: column;
+
+//   .form__input {
+//     height: 60px;
+//     width: 100%;
+//     background-color: #ffffff;
+//     outline: none;
+//     border: none;
+//     font-size: 14px;
+//     font-family: 'Montserrat-Medium', sans-serif;
+//     margin-bottom: 30px;
+//     padding-left: 20px;
+//     @include bp-sm() {
+//       width: 360px;
+//       font-size: 18px;
+//     }
+
+//     &::placeholder {
+//       font-size: 14px;
+//       @include bp-md() {
+//         font-size: 18px;
+//       }
+//     }
+//   }
+
+//   .form__btn {
+//     color: #ffffff;
+//     font-size: 14px;
+//     font-family: 'Montserrat-Medium', sans-serif;
+//     width: 100%;
+//     height: 60px;
+//     outline: none;
+//     border: none;
+//     cursor: pointer;
+//     margin-bottom: 30px;
+//     @include bp-sm() {
+//       width: 360px;
+//       font-size: 18px;
+//     }
+//     @include bp-md() {
+//       margin-bottom: 0;
+//     }
+//   }
+
+// }

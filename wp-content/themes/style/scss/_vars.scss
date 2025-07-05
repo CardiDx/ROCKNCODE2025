@@ -1,0 +1,44 @@
+@use "sass:math";
+// @import "../node_modules/bourbon/core";
+
+$default-font: "Playfair Display-Bold";
+
+$accent: #ff9285;
+$gray: #636362;
+$dark: #262626;
+
+$success: #3fd37d;
+$info: #14cfe8;
+$warning: #fff12d;
+$danger: #ff6142;
+
+//rockncode
+// Container & Breakpoints
+
+$containerWidth: 1560;
+$containerPadding: 40;
+$containerSidePadding: math.div($containerPadding, 2);
+$breakpoint2560: 2559.98 + px;
+$breakpoint1920: 1919.98 + px;
+$breakpoint1450: 1449.98 + px;
+$breakpoint1179: 1179.98 + px;
+$breakpoint992: 1023.98 + px;
+$breakpoint768: 767.98 + px;
+$breakpoint480: 479.98 + px;
+
+// Burger Menu
+$burgerBreakpoint: $breakpoint992;
+$burgerColor: "white";
+$burgerActiveColor: "white";
+
+// Fonts
+$fontMain: sans-serif;
+$fontSecondary: "";
+
+// Colors
+$mainGray: #91918a;
+$primaryGray: #91918a;
+$opacityWhite: rgba(255, 255, 255, 0.87);
+// $green: #c6ff00;
+$green: #a6d700;
+$greenHover: #a6d700;

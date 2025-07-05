@@ -1,0 +1,97 @@
+@import "mixins";
+@import "vars";
+
+// .error {
+//   font-family: "Montserrat-Medium", sans-serif;
+//   margin: 0 auto;
+//   max-width: 600px;
+//   text-align: center;
+//   padding: 40px 0;
+//   position: relative;
+
+//   .error__title {
+//     font-family: "Playfair Display-Bold", sans-serif;
+//     font-size: 220px;
+//     line-height: 1.2;
+//     margin-bottom: 20px;
+//   }
+
+//   .error__subtitle {
+//     margin-bottom: 10px;
+//     font-size: 20px;
+//     font-weight: bold;
+//   }
+
+//   .error__desc {
+//     margin-bottom: 60px;
+//   }
+
+//   .error__btn,
+//   .error__btn:visited,
+//   .error__btn:active,
+//   .error__btn:focus {
+//     font-family: "Montserrat-Medium", sans-serif;
+//     padding: 14px 36px;
+//     display: inline-block;
+//     color: #ffffff;
+
+//   }
+
+//   .error__icons {
+//     img {
+
+//       animation-duration: 2s;
+//       animation-iteration-count: infinite;
+
+//       width: 40px;
+//       height: 40px;
+
+//       &:first-child {
+//         position: absolute;
+//         top: 0;
+//         transform: rotate(-20deg);
+//         filter: blur(1px);
+//       }
+
+//       &:nth-child(2) {
+//         position: absolute;
+//         right: 0;
+//         top: 30%;
+//         width: 60px;
+//         height: 60px;
+//         transform: rotate(5deg);
+//       }
+
+//       &:last-child {
+//         width: 60px;
+//         height: 60px;
+//         position: absolute;
+//         left: 0;
+//         top: 50%;
+//         transform: rotate(20deg);
+//         filter: blur(2px);
+//       }
+//     }
+//   }
+
+// }
+
+// .bounce-3 {
+//   animation-name: bounce-3;
+//   animation-timing-function: ease;
+// }
+
+// @keyframes bounce-3 {
+//   0% {
+//     top: 0;
+//   }
+//   30% {
+//     top: 30%;
+//   }
+//   50% {
+//     transform: translateY(0);
+//   }
+//   100% {
+//     transform: translateY(0);
+//   }
+// }

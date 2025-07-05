@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "Onest";
+  src: url("../fonts/Onest-Regular.eot"); /* IE 9 Compatibility Mode */
+  src: url("../fonts/Onest-Regular.eot?#iefix") format("embedded-opentype"),
+    /* IE < 9 */ url("../fonts/Onest-Regular.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../fonts/Onest-Regular.woff")
+      format("woff"),
+    /* Firefox >= 3.6, any other modern browser */
+      url("../fonts/Onest-Regular.ttf") format("truetype"),
+    /* Safari, Android, iOS */ url("../fonts/Onest-Regular.svg#Onest-Regular")
+      format("svg"); /* Chrome < 4, Legacy iOS */
+  font-display: swap;
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Onest";
+  src: url("../fonts/Onest-Medium.eot"); /* IE 9 Compatibility Mode */
+  src: url("../fonts/Onest-Medium.eot?#iefix") format("embedded-opentype"),
+    /* IE < 9 */ url("../fonts/Onest-Medium.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../fonts/Onest-Medium.woff") format("woff"),
+    /* Firefox >= 3.6, any other modern browser */
+      url("../fonts/Onest-Medium.ttf") format("truetype"),
+    /* Safari, Android, iOS */ url("../fonts/Onest-Medium.svg#Onest-Medium")
+      format("svg"); /* Chrome < 4, Legacy iOS */
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Onest";
+  src: url("../fonts/Onest-Bold.eot"); /* IE 9 Compatibility Mode */
+  src: url("../fonts/Onest-Bold.eot?#iefix") format("embedded-opentype"),
+    /* IE < 9 */ url("../fonts/Onest-Bold.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../fonts/Onest-Bold.woff") format("woff"),
+    /* Firefox >= 3.6, any other modern browser */
+      url("../fonts/Onest-Bold.ttf") format("truetype"),
+    /* Safari, Android, iOS */ url("../fonts/Onest-Bold.svg#Onest-Bold")
+      format("svg"); /* Chrome < 4, Legacy iOS */
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}

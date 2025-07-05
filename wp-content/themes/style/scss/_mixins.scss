@@ -1,0 +1,42 @@
+// @import "../node_modules/bourbon/core";
+
+@mixin trans($property) {
+	transition: $property .35s ease;
+}
+
+//custom
+@mixin bp-custom($width) {
+  @media only screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin bp-xs {
+  @media only screen and (min-width: 445px) {
+    @content;
+  }
+}
+
+@mixin bp-sm {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin bp-md {
+  @media only screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin bp-lg {
+  @media only screen and (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin bp-xl {
+  @media only screen and (min-width: 1640px) {
+    @content;
+  }
+}

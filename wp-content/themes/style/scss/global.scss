@@ -1,0 +1,110 @@
+/*----------------------- Общие ------------------------------ */
+// Html
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Onest", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  overflow-x: hidden;
+  font-weight: 400;
+  color: #fff;
+  background-color: #0d0c0f;
+}
+
+.post,
+.page {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+// Container
+.container {
+  max-width: ($containerWidth + $containerPadding) + px;
+  width: 100%;
+  margin: 0 auto;
+
+  padding: 0 20px;
+
+  @media (max-width: $breakpoint768) {
+    padding: 0 $containerSidePadding + px;
+  }
+}
+
+// Body Locked
+body {
+  &.locked {
+    overflow: hidden;
+  }
+}
+
+// Animations
+// Fade
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 120%; /* 72px */
+  letter-spacing: -2.4px;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 120%;
+  letter-spacing: -2.4px;
+}
+
+@media (max-width: $breakpoint1179) {
+  .body-text {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: $breakpoint992) {
+  h2 {
+    letter-spacing: normal;
+  }
+}
+
+button {
+  background-color: transparent;
+  font-family: inherit;
+}
+
+//custom styles
+.button {
+  display: block;
+  padding: 19px 32px;
+  border-radius: 12px;
+  background: #a6d700;
+  text-decoration: none;
+  color: #0d0c0f;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 100%; /* 20px */
+  letter-spacing: -0.6px;
+  @media (max-width: $breakpoint768) {
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+.t-upper {
+  text-transform: uppercase;
+}
