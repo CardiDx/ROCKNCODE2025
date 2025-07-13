@@ -20,11 +20,6 @@ get_header();
                         <p class="error__subtitle">Страница Не Найдена</p>
                             <p class="error__desc">Похоже, мы не можем найти нужную вам страницу</p>
                         <a class="error__btn btn btn-gradient" href="/">На главную</a>
-                        <div class="error__icons">
-                            <img class="bounce-3" src="/wp-content/themes/style/img/icons/about/dress.svg" alt="">
-                            <img class="bounce-3" src="/wp-content/themes/style/img/icons/about/dress.svg" alt="">
-                            <img class="bounce-3" src="/wp-content/themes/style/img/icons/about/dress.svg" alt="">
-                        </div>
                     </div>
                 </div>
             </div>

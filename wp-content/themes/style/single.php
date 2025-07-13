@@ -31,27 +31,23 @@ while (have_posts()) {
                 </ol>
 
                 <div class="article-head">
-                    <div class="article-author">
-                        <div class="article-author__image">
-                            <a href="/media/authors/karina-aleshina/">
-                                <img
-                                    src="https://248006.selcdn.ru/main/iblock/0a1/0a1791b4ebf319c1ab4718c122e815eb/b5670529c6da5c9d8e66fe0a10685e8a.png"
-                                    alt="Карина Алёшина">
-                            </a>
-                        </div>
 
+                    <div class="intro-heading intro-heading__article">
+                        <h1 class="intro-heading__title"><?php single_post_title(); ?></h1>
+                    </div>
+
+                    <div class="article-head__post-info"><div class="article-author">
                         <div class="article-author__info">
                             <div class="article-author__name"><?php echo get_the_author(); ?></div>
-                            <div class="article-author__description">
-                                Основатель Rockncode</div>
-                            <div class="reading-time">
-                                <span>Время чтения: <?php echo get_reading_time(); ?></span>
+                            <div class="article-meta__bottom">
+                                <!-- <span class="reading-time"><?php //echo get_reading_time(); ?> читать</span>
+                                <span class="dot-separator">•</span> -->
+                                <span class="article-date"><?php echo get_the_date('j F Y'); ?></span>
                             </div>
                         </div>
+
                     </div>
-                    <div class="article-date">
-                        <?php echo get_the_date('j F Y'); ?>
-                    </div>
+
                     <div class="post-category">
                         <?php
                         $categories = get_the_category();
@@ -60,13 +56,12 @@ while (have_posts()) {
                             echo '<a href="' . esc_url(get_category_link($categories[0]->term_id)) . '">' . esc_html($categories[0]->name) . '</a>';
                         }
                         ?>
-                    </div>
+                    </div></div>
+
                 </div>
 
-                <div class="intro-heading intro-heading__article">
-                    <h1 class="intro-heading__title"><?php single_post_title(); ?></h1>
-                    <img src="<?php the_post_thumbnail_url(); ?>" alt="" class="main-blog-item__img">
-                </div>
+                <div class="article-img"><img class="main-blog-item__img" src="<?php the_post_thumbnail_url(); ?>" alt=""></div>
+
 
                 <div class="content article-content">
 
@@ -78,7 +73,7 @@ while (have_posts()) {
                     <?php the_content(); ?>
 
 
-                    <?php
+                    <?php /*
                     $similarPosts = get_field('post_similar');
                     //                                echo count($similarPosts);
                     if (isset($similarPosts) && count($similarPosts) > 0) {
@@ -96,7 +91,7 @@ while (have_posts()) {
                                 <?php } ?>
                             </ul>
                         </div>
-                    <?php } ?>
+                    <?php } */?>
 
                 </div>
 
@@ -142,86 +137,6 @@ while (have_posts()) {
     </main>
 
 
-
-    <?php /* ?>
-                                <div class="row">
-                                    <div class="col-12 col-lg-8">
-                                        <div class="comments-wrapper">
-                                            <h3 class="title_size-3">Комментарии:</h3>
-                                            <ul class="comment-tab" role="tablist">
-                                                <li class="active-tab" role="presentation"><a
-                                                            class="comment-tab__link"
-                                                            href="#default-comments"
-                                                            data-toggle="tab">Обычные
-                                                        <span class="count-comments">( 0 )</span></a></li>
-                                                <li role="presentation"><a class="comment-tab__link"
-                                                                           href="#vk-comments"
-                                                                           data-toggle="tab">Вконтакте</a></li>
-                                            </ul>
-
-                                            <div class="tab-content">
-                                                <!--tab content 1-->
-                                                <div role="tabpanel" class="tab-pane active" id="default-comments">
-                                                    <div class="user-comment">
-                                                        <div class="user__avatar">
-                                                            <img src="/wp-content/themes/style/img/elena-belyaeva.jpg"
-                                                                 alt="">
-                                                        </div>
-                                                        <div class="user__desc">
-                                                            <span class="user__name">Артур</span>
-                                                            <p class="user__comment">пояснения к исходному тексту
-                                                                программы, находящиеся непосредственно внутри
-                                                                комментируемого кода.</p>
-                                                            <div class="user__meta">
-                                                                <span class="user__date-comment">2 дня назад</span>
-                                                                <span class="user__reply-text"><a class="reply-link"
-                                                                                                  href="#">Ответить</a></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="user-comment">
-                                                        <div class="user__avatar">
-                                                            <img src="/wp-content/themes/style/img/elena-belyaeva.jpg"
-                                                                 alt="">
-                                                        </div>
-                                                        <div class="user__desc">
-                                                            <span class="user__name">Артур</span>
-                                                            <p class="user__comment">пояснения к исходному тексту
-                                                                программы, находящиеся непосредственно внутри
-                                                                комментируемого кода.</p>
-                                                            <div class="user__meta">
-                                                                <span class="user__date-comment">2 дня назад</span>
-                                                                <span class="user__reply-text"><a class="reply-link"
-                                                                                                  href="#">Ответить</a></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!--tab content 2 -->
-                                                <div role="tabpanel" class="tab-pane vk-comments"
-                                                     id="vk-comments"></div>
-                                            </div>
-                                            <div class="form-wrap__comment">
-                                                <h2 class="title_size-3">Оставить комментарий</h2>
-                                                <form action="" class="comment-form">
-                                            <textarea class="border_black" name="" id="comment-area" cols="30" rows="10"
-                                                      placeholder="Ваш коментарий*"></textarea>
-                                                    <div class="wrap__input">
-                                                        <input class="form__input border_black" type="text"
-                                                               placeholder="Имя*"
-                                                               required>
-                                                        <input class="form__input border_black" type="email"
-                                                               placeholder="Email*"
-                                                               required>
-                                                    </div>
-                                                    <input class="form__btn btn-gradient" type="submit"
-                                                           value="Отправить">
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <?php */ ?>
 
 
 <?php } ?>

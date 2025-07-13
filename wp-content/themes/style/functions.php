@@ -221,53 +221,53 @@ function my_theme_deregister_styles()
 }
 
 //просмоттры на постах
-function track_post_views($post_id)
-{
-	// Проверяем, что это не администратора (чтобы не засчитывать просмотры при редактировании)
-	if (is_single() && !is_admin()) {
-		// Получаем IP-адрес пользователя
-		$ip_address = $_SERVER['REMOTE_ADDR'];
+// function track_post_views($post_id)
+// {
+// 	// Проверяем, что это не администратора (чтобы не засчитывать просмотры при редактировании)
+// 	if (is_single() && !is_admin()) {
+// 		// Получаем IP-адрес пользователя
+// 		$ip_address = $_SERVER['REMOTE_ADDR'];
 
-		// Получаем значение мета-поля для поста
-		$views = get_post_meta($post_id, 'post_views', true);
+// 		// Получаем значение мета-поля для поста
+// 		$views = get_post_meta($post_id, 'post_views', true);
 
-		// Если просмотры не установлены, инициализируем
-		if (empty($views)) {
-			$views = 0;
-		}
+// 		// Если просмотры не установлены, инициализируем
+// 		if (empty($views)) {
+// 			$views = 0;
+// 		}
 
-		// Проверяем, был ли уже просмотр с этого IP-адреса
-		$views_ip_key = 'views_' . md5($ip_address); // Ключ для IP
+// 		// Проверяем, был ли уже просмотр с этого IP-адреса
+// 		$views_ip_key = 'views_' . md5($ip_address); // Ключ для IP
 
-		if (!isset($_COOKIE[$views_ip_key])) {
-			// Увеличиваем количество просмотров
-			$views++;
+// 		if (!isset($_COOKIE[$views_ip_key])) {
+// 			// Увеличиваем количество просмотров
+// 			$views++;
 
-			// Обновляем мета-поле
-			update_post_meta($post_id, 'post_views', $views);
+// 			// Обновляем мета-поле
+// 			update_post_meta($post_id, 'post_views', $views);
 
-			// Устанавливаем куки, чтобы этот IP не засчитывался за повторный просмотр в течение суток
-			setcookie($views_ip_key, $ip_address, time() + 86400, "/"); // Куки на 1 день
-		}
-	}
-}
+// 			// Устанавливаем куки, чтобы этот IP не засчитывался за повторный просмотр в течение суток
+// 			setcookie($views_ip_key, $ip_address, time() + 86400, "/"); // Куки на 1 день
+// 		}
+// 	}
+// }
 
 // Добавляем хук для отслеживания просмотров
-add_action('wp_head', function () {
-	if (is_single()) {
-		track_post_views(get_the_ID());
-	}
-});
+// add_action('wp_head', function () {
+// 	if (is_single()) {
+// 		track_post_views(get_the_ID());
+// 	}
+// });
 
-// Функция для отображения количества просмотров
-function get_post_views($post_id)
-{
-	$views = get_post_meta($post_id, 'post_views', true);
-	if ($views == '') {
-		$views = 0;
-	}
-	return $views;
-}
+// // Функция для отображения количества просмотров
+// function get_post_views($post_id)
+// {
+// 	$views = get_post_meta($post_id, 'post_views', true);
+// 	if ($views == '') {
+// 		$views = 0;
+// 	}
+// 	return $views;
+// }
 
 //time for reading
 function get_reading_time()
@@ -298,3 +298,33 @@ function get_reading_time()
 	$minute_text = ($reading_time == 1) ? 'минута' : 'минут';
 	return $reading_time . ' ' . $minute_text;
 }
+
+
+function register_portfolio_post_type() {
+    register_post_type('portfolio', [
+        'labels' => [
+            'name' => 'Портфолио',
+            'singular_name' => 'Кейс',
+            'add_new' => 'Добавить кейс',
+            'add_new_item' => 'Добавить новый кейс',
+            'edit_item' => 'Редактировать кейс',
+            'new_item' => 'Новый кейс',
+            'view_item' => 'Смотреть кейс',
+            'search_items' => 'Искать кейсы',
+            'not_found' => 'Кейсов не найдено',
+            'menu_name' => 'Портфолио',
+        ],
+        'public' => true,
+        'has_archive' => true,
+        'menu_icon' => 'dashicons-portfolio',
+        'supports' => ['title', 'editor', 'thumbnail'],
+        'rewrite' => ['slug' => 'portfolio'],
+        'show_in_rest' => true
+    ]);
+}
+add_action('init', 'register_portfolio_post_type');
+
+//меню шапка
+register_nav_menus([
+	'main_menu' => 'Главное меню',
+  ]);

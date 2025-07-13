@@ -52,8 +52,7 @@
 
         <?php }
         } ?>
-        <!--sidebar-->
-        <?php get_sidebar(); ?>
+
     </div>
 </div>
 

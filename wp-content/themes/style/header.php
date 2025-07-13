@@ -11,7 +11,6 @@
  */
 
 ?>
-<!doctype html>
 <html <?php language_attributes(); ?>>
 
 <head>
@@ -57,7 +56,7 @@
                                         title="логотип веб-студии rockncode">
                                 </a>
                             </div>
-                            <ul class="menu">
+                            <!-- <ul class="menu">
                                 <li class="menu__item"><a href="#how-work" class="menu__item-link" data-scroll>Как мы
                                         работаем</a></li>
                                 <li class="menu__item"><a href="#portfolio" class="menu__item-link"
@@ -67,7 +66,19 @@
                                 <li class="menu__item"><a href="#blog" class="menu__item-link" data-scroll>Блог</a></li>
                                 <li class="menu__item"><a href="#footer" class="menu__item-link" data-scroll>Контакты</a>
                                 </li>
-                            </ul>
+                            </ul> -->
+
+                            <?php
+                            wp_nav_menu([
+                                'theme_location' => 'main_menu',
+                                'menu_class'     => 'menu',
+                                'container'      => false,
+                                'fallback_cb'    => false,
+                                'items_wrap'     => '<ul class="%2$s">%3$s</ul>',
+                                'walker'         => new Walker_Nav_Menu(), // или свой кастомный если нужен
+                            ]);
+                            ?>
+                            
                             <div class="burger">
                                 <span></span>
                             </div>
