@@ -59,15 +59,52 @@ body {
 
 h1 {
   font-size: 60px;
-  font-weight: 500;
-  line-height: 120%; /* 72px */
+  line-height: 110%;
   letter-spacing: -2.4px;
+  font-weight: 400;
+  margin: 0 0 64px;
+
+  @media (max-width: 1200px) {
+    font-size: 52px;
+  }
+
+  @media (max-width: 992px) {
+    font-size: 44px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+    letter-spacing: -1.2px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 28px;
+    letter-spacing: -0.6px;
+  }
 }
 
 h2 {
   font-size: 48px;
   line-height: 120%;
   letter-spacing: -2.4px;
+
+  @media (max-width: 1200px) {
+    font-size: 40px;
+  }
+
+  @media (max-width: 992px) {
+    font-size: 36px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 30px;
+    letter-spacing: -1px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 24px;
+    letter-spacing: -0.5px;
+  }
 }
 
 @media (max-width: $breakpoint1179) {
@@ -97,8 +134,10 @@ button {
   color: #0d0c0f;
   font-size: 20px;
   font-weight: 500;
-  line-height: 100%; /* 20px */
+  line-height: 100%;
+  /* 20px */
   letter-spacing: -0.6px;
+
   @media (max-width: $breakpoint768) {
     font-size: 16px;
     text-align: center;

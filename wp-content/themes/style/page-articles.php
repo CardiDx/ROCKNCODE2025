@@ -2,7 +2,7 @@
 /* Template Name: Articles Page */
 get_header(); ?>
 
-<section class="articles-page">
+<section class="site-main articles-page">
   <div class="articles-page__container container">
     <h1 class="articles-page__title">Статьи</h1>
 
