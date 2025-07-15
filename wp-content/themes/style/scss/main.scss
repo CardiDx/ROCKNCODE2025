@@ -1503,7 +1503,7 @@ nav {
 .blog {
   padding-top: 180px;
   padding-bottom: 180px;
-  overflow: hidden;
+  // overflow: hidden;
 
   @media (max-width: $breakpoint1450) {
     padding: 108px 0 108px;
@@ -1568,6 +1568,13 @@ nav {
 }
 
 .post:hover .post__title {
+  color: #a6d700;
+}
+
+
+.post:visited .post__title,
+.post:focus .post__title,
+.post:active .post__title {
   color: #a6d700;
 }
 

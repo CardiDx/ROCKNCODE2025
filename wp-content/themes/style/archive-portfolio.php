@@ -89,7 +89,17 @@
     flex-direction: column;
   }
 
-  .portfolio-card:hover {
+ 
+
+.portfolio-card:active,
+.portfolio-card:focus,
+.portfolio-card:visited {
+    .portfolio-card__title {
+      color: #fff;
+    }
+  }
+
+ .portfolio-card:hover {
     transform: translateY(-5px);
 
     .portfolio-card__title {
@@ -100,7 +110,11 @@
   .portfolio-card__image {
     overflow: hidden;
   }
-
+  .portfolio-card__image img{
+    width: 100%;
+    height: 300px;
+    object-fit : cover;
+  }
   .portfolio-card__img {
     width: 100%;
     height: auto;

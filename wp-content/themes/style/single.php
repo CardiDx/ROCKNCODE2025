@@ -7,60 +7,75 @@ while (have_posts()) {
         <div class="container article-container">
             <section class="main-inner">
                 <!-- Хлебные крошки  -->
-
                 <ol class="breadcrumb text-muted">
                     <li class="breadcrumb-item">
                         <a class="breadcrumb-item-link" href="<?php echo home_url(); ?>">Главная</a>
                     </li>
 
-                    <?php if (is_category() || is_single()) : ?>
-                        <li class="breadcrumb-item">
-                            <a class="breadcrumb-item-link" href="<?php echo get_category_link(get_queried_object()->term_id); ?>">
-                                <?php single_cat_title(); ?>
-                            </a>
-                        </li>
-                    <?php endif; ?>
+                    <li class="breadcrumb-item">
+                        <a class="breadcrumb-item-link" href="<?php echo site_url('/articles'); ?>">Статьи</a>
+                    </li>
 
-                    <?php if (is_single()) : ?>
-                        <li class="breadcrumb-item text-muted"><?php the_title(); ?></li>
-                    <?php elseif (is_page()) : ?>
-                        <li class="breadcrumb-item text-muted"><?php the_title(); ?></li>
-                    <?php elseif (is_category()) : ?>
-                        <li class="breadcrumb-item text-muted"><?php single_cat_title(); ?></li>
-                    <?php endif; ?>
+                    <li class="breadcrumb-item text-muted"><?php the_title(); ?></li>
                 </ol>
+                <?php /* 
+               <ol class="breadcrumb text-muted">
+                   <li class="breadcrumb-item">
+                       <a class="breadcrumb-item-link" href="<?php echo home_url(); ?>">Главная</a>
+                   </li>
+
+                   <?php if (is_category() || is_single()) : ?>
+                       <li class="breadcrumb-item">
+                           <a class="breadcrumb-item-link" href="<?php echo get_category_link(get_queried_object()->term_id); ?>">
+                               <?php single_cat_title(); ?>
+                           </a>
+                       </li>
+                   <?php endif; ?>
+
+                   <?php if (is_single()) : ?>
+                       <li class="breadcrumb-item text-muted"><?php the_title(); ?></li>
+                   <?php elseif (is_page()) : ?>
+                       <li class="breadcrumb-item text-muted"><?php the_title(); ?></li>
+                   <?php elseif (is_category()) : ?>
+                       <li class="breadcrumb-item text-muted"><?php single_cat_title(); ?></li>
+                   <?php endif; ?>
+               </ol>
+               */ ?>
 
                 <div class="article-head">
 
-                    <div class="intro-heading intro-heading__article">
+                    <div class="intro-heading__article">
                         <h1 class="intro-heading__title"><?php single_post_title(); ?></h1>
                     </div>
 
-                    <div class="article-head__post-info"><div class="article-author">
-                        <div class="article-author__info">
-                            <div class="article-author__name"><?php echo get_the_author(); ?></div>
-                            <div class="article-meta__bottom">
-                                <!-- <span class="reading-time"><?php //echo get_reading_time(); ?> читать</span>
+                    <div class="article-head__post-info">
+                        <div class="article-author">
+                            <div class="article-author__info">
+                                <div class="article-author__name"><?php echo get_the_author(); ?></div>
+                                <div class="article-meta__bottom">
+                                    <!-- <span class="reading-time"><?php //echo get_reading_time(); ?> читать</span>
                                 <span class="dot-separator">•</span> -->
-                                <span class="article-date"><?php echo get_the_date('j F Y'); ?></span>
+                                    <span class="article-date"><?php echo get_the_date('j F Y'); ?></span>
+                                </div>
                             </div>
+
                         </div>
 
+                        <div class="post-category">
+                            <?php
+                            $categories = get_the_category();
+                            if (!empty($categories)) {
+                                // Выводим первую категорию
+                                echo '<a class="post-category__link" href="' . esc_url(get_category_link($categories[0]->term_id)) . '">' . esc_html($categories[0]->name) . '</a>';
+                            }
+                            ?>
+                        </div>
                     </div>
-
-                    <div class="post-category">
-                        <?php
-                        $categories = get_the_category();
-                        if (!empty($categories)) {
-                            // Выводим первую категорию
-                            echo '<a href="' . esc_url(get_category_link($categories[0]->term_id)) . '">' . esc_html($categories[0]->name) . '</a>';
-                        }
-                        ?>
-                    </div></div>
 
                 </div>
 
-                <div class="article-img"><img class="main-blog-item__img" src="<?php the_post_thumbnail_url(); ?>" alt=""></div>
+                <div class="article-img"><img class="main-blog-item__img" src="<?php the_post_thumbnail_url(); ?>" alt="">
+                </div>
 
 
                 <div class="content article-content">
@@ -74,24 +89,24 @@ while (have_posts()) {
 
 
                     <?php /*
-                    $similarPosts = get_field('post_similar');
-                    //                                echo count($similarPosts);
-                    if (isset($similarPosts) && count($similarPosts) > 0) {
-                    ?>
-                        <div class="other-article">
-                            <h3 class="title_size-3">Похожие статьи:</h3>
-                            <ul class="theme-list">
-                                <?php foreach ($similarPosts as $key => $similar) {
+                   $similarPosts = get_field('post_similar');
+                   //                                echo count($similarPosts);
+                   if (isset($similarPosts) && count($similarPosts) > 0) {
+                   ?>
+                       <div class="other-article">
+                           <h3 class="title_size-3">Похожие статьи:</h3>
+                           <ul class="theme-list">
+                               <?php foreach ($similarPosts as $key => $similar) {
 
-                                    //                                            echo '<pre>';
-                                    //                                            print_r($similar['post_similar_item']);
-                                    //                                            echo '</pre>';
-                                ?>
-                                    <li class="theme-list__item"><a class="article-link" href="<?= get_the_permalink($similar['post_similar_item']) ?>"><?= get_the_title($similar['post_similar_item']) ?></a></li>
-                                <?php } ?>
-                            </ul>
-                        </div>
-                    <?php } */?>
+                                   //                                            echo '<pre>';
+                                   //                                            print_r($similar['post_similar_item']);
+                                   //                                            echo '</pre>';
+                               ?>
+                                   <li class="theme-list__item"><a class="article-link" href="<?= get_the_permalink($similar['post_similar_item']) ?>"><?= get_the_title($similar['post_similar_item']) ?></a></li>
+                               <?php } ?>
+                           </ul>
+                       </div>
+                   <?php } */ ?>
 
                 </div>
 
@@ -99,38 +114,38 @@ while (have_posts()) {
 
 
             <?php /*
-            <div class="sidebar-categories">
-                <ul class="sidebar-category-list">
-                    <?php
-                    // Получаем все категории
-                    $categories = get_categories(array(
-                        'orderby' => 'name',
-                        'order'   => 'ASC'
-                    ));
+           <div class="sidebar-categories">
+               <ul class="sidebar-category-list">
+                   <?php
+                   // Получаем все категории
+                   $categories = get_categories(array(
+                       'orderby' => 'name',
+                       'order'   => 'ASC'
+                   ));
 
-                    // Для каждой категории выводим ссылку и иконку
-                    foreach ($categories as $category) :
-                        // Получаем ссылку на категорию
-                        $category_link = get_category_link($category->term_id);
-                        $category_name = $category->name;
+                   // Для каждой категории выводим ссылку и иконку
+                   foreach ($categories as $category) :
+                       // Получаем ссылку на категорию
+                       $category_link = get_category_link($category->term_id);
+                       $category_name = $category->name;
 
-                        // Получаем иконку из ACF поля
-                        $category_icon = get_field('category_icon', 'category_' . $category->term_id); // 'category_icon' — это название поля
+                       // Получаем иконку из ACF поля
+                       $category_icon = get_field('category_icon', 'category_' . $category->term_id); // 'category_icon' — это название поля
 
-                        // Если иконка не установлена, используем дефолтную иконку
-                        if (!$category_icon) {
-                            $category_icon = 'fa fa-folder'; // Или любую другую дефолтную иконку
-                        }
-                    ?>
-                        <li class="sidebar-category-item">
-                            <a href="<?php echo $category_link; ?>" class="sidebar-category-link">
-                                <i class="<?php echo esc_attr($category_icon); ?>"></i> <!-- Выводим иконку -->
-                                <?php echo $category_name; ?>
-                            </a>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-            </div> */ ?>
+                       // Если иконка не установлена, используем дефолтную иконку
+                       if (!$category_icon) {
+                           $category_icon = 'fa fa-folder'; // Или любую другую дефолтную иконку
+                       }
+                   ?>
+                       <li class="sidebar-category-item">
+                           <a href="<?php echo $category_link; ?>" class="sidebar-category-link">
+                               <i class="<?php echo esc_attr($category_icon); ?>"></i> <!-- Выводим иконку -->
+                               <?php echo $category_name; ?>
+                           </a>
+                       </li>
+                   <?php endforeach; ?>
+               </ul>
+           </div> */ ?>
 
 
         </div>
@@ -142,7 +157,7 @@ while (have_posts()) {
 <?php } ?>
 <script>
     // Auto menu for articles
-    $(document).ready(function() {
+    $(document).ready(function () {
         // Auto menu for articles
         let articleContentTitles = $(".article-content h2");
         let articleNavigationObject = $(".articleNavigation ul");
@@ -165,7 +180,7 @@ while (have_posts()) {
         let currentTitleIndex = 0;
 
         // Для каждого заголовка создаем ссылку в оглавлении
-        articleContentTitles.each(function() {
+        articleContentTitles.each(function () {
             let title = $(this).text();
             let listTitle = removeSpecialCharactersFromTitle(title);
             let titleId = createIdFromTitle(listTitle);
@@ -186,7 +201,7 @@ while (have_posts()) {
         // Функция для вычисления и установки позиции маркера
         function calculateAndSetMarkerTopPosition(targetTitle) {
             let previousTitlesHeight = 0;
-            $(".articleNavigation li").each(function(i) {
+            $(".articleNavigation li").each(function (i) {
                 if (i < targetTitle.index()) {
                     previousTitlesHeight += $(this).height();
                 }
@@ -209,7 +224,7 @@ while (have_posts()) {
         calculateAndSetMarkerTopPosition($(".articleNavigation li.active"));
 
         // Обработчик события для прокрутки
-        $(window).scroll(function() {
+        $(window).scroll(function () {
             let currentTitle = $(".articleNavigation li.active");
             let scroll = $(window).scrollTop(); // Получаем текущую позицию скролла
 
@@ -242,7 +257,7 @@ while (have_posts()) {
         });
 
         // Обработчик клика по оглавлению
-        $(document).on("click", ".articleNavigation li a", function(e) {
+        $(document).on("click", ".articleNavigation li a", function (e) {
             e.preventDefault();
 
             $(this).parent().siblings("li.active").removeClass("active");
@@ -252,8 +267,8 @@ while (have_posts()) {
 
             const titleMarginTop = 16;
             $("html, body").animate({
-                    scrollTop: $($(this).attr("href")).offset().top - titleMarginTop,
-                },
+                scrollTop: $($(this).attr("href")).offset().top - titleMarginTop,
+            },
                 500
             );
 

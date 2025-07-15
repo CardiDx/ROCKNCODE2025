@@ -328,3 +328,11 @@ add_action('init', 'register_portfolio_post_type');
 register_nav_menus([
 	'main_menu' => 'Главное меню',
   ]);
+
+  function rockncode_customize_body_classes($classes) {
+    // Удаляем ненужные классы
+    $remove = ['blog', 'logged-in', 'admin-bar', 'customize-support', 'hfeed'];
+
+    return array_diff($classes, $remove);
+}
+add_filter('body_class', 'rockncode_customize_body_classes');

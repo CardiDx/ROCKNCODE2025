@@ -4,6 +4,13 @@ get_header(); ?>
 
 <section class="site-main articles-page">
   <div class="articles-page__container container">
+    <ol class="breadcrumb text-muted">
+  <li class="breadcrumb-item">
+    <a class="breadcrumb-item-link" href="<?php echo home_url(); ?>">Главная</a>
+  </li>
+
+  <li class="breadcrumb-item text-muted"><?php the_title(); ?></li>
+</ol>
     <h1 class="articles-page__title">Статьи</h1>
 
     <div class="articles-page__list">
@@ -53,7 +60,6 @@ get_header(); ?>
 
 .articles-page__title {
   font-size: 36px;
-  font-weight: bold;
   margin-bottom: 40px;
 }
 
@@ -69,6 +75,10 @@ get_header(); ?>
   gap: 32px;
   text-decoration: none;
   color: inherit;
+}
+
+.article-item:hover .article-item__title{
+  color: #C6FF00;
 }
 
 .article-item__image-wrapper {
@@ -120,7 +130,7 @@ get_header(); ?>
 
 .article-item__title {
   font-size: 20px;
-  font-weight: 700;
+  letter-spacing: 0; 
   margin-bottom: 10px;
 }
 
