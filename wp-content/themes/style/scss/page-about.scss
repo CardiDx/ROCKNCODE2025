@@ -1,165 +1,113 @@
-// @import "mixins";
-// @import "vars";
+@import "mixins";
+@import "vars";
 
-// .page-about {
-//   padding-bottom: 100px;
-// }
+.about {
+  padding-top: 80px;
+  background-color: #0d0c0f;
+  color: #fff;
 
-// .page-about__content {
-// }
+  @include bp-md{
+  padding-top: 140px;
+  }
 
-// .about__meet {
-//   display: flex;
-//   flex-direction: column;
-//   padding-bottom: 65px;
-//   @include bp-lg() {
-//     flex-direction: row;
-//   }
-// }
 
-// .about__wrap-img-me {
-//   height: 100%;
-//   max-width: 490px;
-//   //width: 100%;
-//   @include bp-sm() {
-//     height: 400px;
-//   }
+  &__title {
+    font-size: 40px;
+    line-height: 110%;
+    letter-spacing: -2.4px;
+    margin-bottom: 32px;
 
-//   img {
-//     width: 302px;
-//     height: auto;
-//     object-fit: cover;
-//     max-width: 100%;
-//     max-height: 100%;
-//     @include bp-sm() {
-//       width: 490px;
-//       height: 100%;
-//     }
-//   }
-// }
+    @include bp-md {
+      font-size: 60px;
+    }
+  }
 
-// .about__info-text {
-//   width: auto;
-//   padding-left: 0;
-//   line-height: 1.5px;
-//   @include bp-lg() {
-//     padding-left: 70px;
-//     width: 650px;
-//   }
-// }
+  &__text {
+    font-size: 20px;
+    color: #d2d2d2;
+    max-width: 960px;
+    line-height: 1.6;
 
-// .about__name-text {
-//   font-family: 'Playfair Display-Bold', sans-serif;
-//   font-size: 24px;
-//   line-height: 1;
-//   margin: 20px 0 10px 0;
-//   @include bp-sm() {
-//     font-size: 40px;
-//   }
-// }
+    a {
+      color: #c6ff00;
+      text-decoration: underline;
+    }
+  }
 
-// .about__role {
-//   display: inline-block;
-//   margin-bottom: 20px;
-//   font-family: 'Montserrat-Medium', sans-serif;
-//   color: #636362;
-//   font-size: 15px;
-//   line-height: 1.2;
-//   @include bp-md() {
-//     font-size: 17px;
-//     margin-bottom: 40px;
-//   }
-// }
+  &__who {
+    padding: 120px 0;
 
-// .about__history-me {
-//   font-family: 'Montserrat-Regular', sans-serif;
+    &-inner {
+      display: flex;
+      flex-direction: column;
 
-//   line-height: 1.5;
-//   font-size: 15px;
-//   @include bp-sm() {
-//     width: auto;
-//     font-size: 17px;
-//   }
-// }
+      @include bp-md {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 60px;
+      }
+    }
 
-// .role__list {
-//   list-style-type: none;
-//   margin-left: 25px;
-//   padding-bottom: 110px;
+    &-left {
+      margin-bottom: 40px;
 
-//   li {
-//     font-family: 'Montserrat-Regular', sans-serif;
-//     position: relative;
-//     line-height: 1.5;
-//     margin-bottom: 25px;
-//     font-size: 15px;
+      @include bp-md {
+        flex: 0 0 40%;
+        margin-bottom: 0;
+      }
+    }
 
-//     &:last-child {
-//       margin-bottom: 0;
-//     }
+    &__subtitle {
+      font-size: 48px;
+      font-weight: 500;
+      line-height: 120%;
 
-//     &:before {
-//       content: "";
-//       position: absolute;
-//       background-color: $accent;
-//       width: 5px;
-//       height: 5px;
-//       top: 50%;
-//       transform: translateY(-50%);
-//       left: -15px;
-//       @include bp-sm() {
-//         width: 10px;
-//         height: 10px;
-//         left: -25px;
-//       }
-//     }
-//   }
-// }
+      span {
+        display: block;
+        color: #a3a3a3;
+        font-weight: 400;
+      }
 
-// .role__year {
-//   color: $accent;
-//   font-size: 20px;
-//   font-family: 'Montserrat-Bold', sans-serif;
-//   @include bp-sm() {
-//     font-size: 25px;
-//   }
-// }
+      @include bp-sm {
+        font-size: 56px;
+      }
 
-// .paragraph-arrow {
-//   background: $accent;
-//   width: 200px;
-//   height: 2px;
-//   margin: 40px auto 40px auto;
-//   display: block;
-// }
+      @include bp-lg {
+        font-size: 64px;
+      }
+    }
 
-// .main-blog-item-content ul,
-// .main-blog-item-content ol {
-//   padding-left: 20px;
-// }
+    &-right {
+      flex: 1;
+    }
+  }
 
-// .advantages {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   margin-bottom: 40px;
-//   @include bp-lg() {
-//     margin-bottom: 0;
-//   }
+  &__desc {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 32px;
+    color: #c9c9c9;
 
-//   .advantages__icon {
-//     width: 65px;
-//     height: 65px;
-//     margin-bottom: 26px;
-//   }
+    @include bp-sm {
+      font-size: 20px;
+    }
+  }
 
-//   .advantages__text {
-//     font-family: 'Montserrat-Regular', sans-serif;
-//     font-size: 16px;
-//     text-align: center;
-//     @include bp-sm() {
-//       font-size: 17px;
-//     }
-//   }
-// }
+  &__benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 16px;
+      font-size: 18px;
+      line-height: 1.5;
+      color: #d1d1d1;
+
+      strong {
+        color: #c6ff00;
+        font-weight: 600;
+      }
+    }
+  }
+}

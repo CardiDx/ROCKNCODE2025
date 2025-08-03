@@ -34,7 +34,7 @@
                         которая поможет выделиться среди конкурентов</p>
                 </div>
             </div>
-            <button class="start-btn" id="modal-btn">Рассчитать стоимость</button>
+            <button class="start-btn" id="modal-btn">Обсудить проект</button>
         </div>
 
         </div>
@@ -57,10 +57,10 @@
                         <div class="step__content-number">01</div>
 
                         <div class="step__content-right">
-                            <h3 class="step__content-title">Начать беседу</h3>
-                            <p class="step__content-text">Короткий звонок для знакомства и обсуждения нового проекта.
-                                Или переписка в любой социальной сети с заполнением брифа — документа, который поможет
-                                реализовать проект</p>
+                            <h3 class="step__content-title">Погружаемся в продукт</h3>
+                            <p class="step__content-text">Задаём правильные вопросы, проводим диагностику, изучаем
+                                бизнес-задачи и целевую аудиторию.
+                                Инструменты: мини-созвон, бриф, аудит текущего сайта/идеи</p>
                         </div>
                         <!-- </div> -->
 
@@ -72,9 +72,10 @@
                         <div class="step__content-number">02</div>
 
                         <div class="step__content-right">
-                            <h3 class="step__content-title">Заключить договор и внести предоплату</h3>
-                            <p class="step__content-text">После оформления всех необходимых документов предоплата
-                                и&nbsp;наши эксперты приступают к&nbsp;решению задач</p>
+                            <h3 class="step__content-title">Проектируем UX и структуру</h3>
+                            <p class="step__content-text">Строим пользовательские сценарии, карту сайта, приоритизируем контент и функции.<br>
+                            — Делаем wireframes (каркас/прототип) и согласовываем логику.<br>
+                            Инструменты: Miro, Figma, карты пути пользователя</p>
                         </div>
                         <!-- </div> -->
                     </div>
@@ -84,9 +85,27 @@
                         <div class="step__content-number">03</div>
 
                         <div class="step__content-right">
-                            <h3 class="step__content-title">Реализовать проект</h3>
-                            <p class="step__content-text">Для качественной реализации проекта составляем смету и сроки,
-                                чтобы вы знали на каком этапе находится проект</p>
+                            <h3 class="step__content-title">Дизайн и разработка</h3>
+                            <p class="step__content-text">
+                                — создаём визуальную концепцию: UI, цвета, типографика, микроанимации<br>
+                                — адаптируем под все устройства<br>
+                                — подключаем разработчика<br>
+                                Инструменты: Figma / WordPress / React / Vue и т.д.</p>
+                            <!-- </div> -->
+                        </div>
+
+                    </div>
+
+                     <div class="step">
+                        <!-- <div class="step__content"> -->
+                        <div class="step__content-number">04</div>
+
+                        <div class="step__content-right">
+                            <h3 class="step__content-title">Запуск и поддержка</h3>
+                            <p class="step__content-text">
+                                — Проверяем, тестируем, передаём инструкции,<br>
+                                — Настраиваем аналитику, отслеживание событий, проводим демо<br>
+                                — Предлагаем поддержку или передаём проект с полной документациейИнструменты: Google analytics, Yandex метрика , Notion, Loom</p>
                             <!-- </div> -->
                         </div>
 
@@ -530,12 +549,13 @@
 
                                     <div class="post__text">
                                         <h3 class="post__title"><?php the_title(); ?></h2>
-                                        <p class="post__desc"><?php echo get_the_excerpt(); ?></p>
+                                            <p class="post__desc"><?php echo get_the_excerpt(); ?></p>
                                     </div>
                                 </a>
 
                             <?php endwhile;
-                            wp_reset_postdata(); else: ?>
+                            wp_reset_postdata();
+                        else: ?>
                             <p>Пока нет статей.</p>
                         <?php endif; ?>
                     </div>
@@ -684,7 +704,7 @@
                         alt="concept-mars-design-website">
                 </div>
                 <div class="cta__content">
-                    <h2 class="cta__content-title title__h2">сделаем ваши идеи реальностью!</h2>
+                    <h2 class="cta__content-title title__h2">Сделаем ваши идеи реальностью!</h2>
                     <p class="cta__content-desc">Давайте обсудим ваш проект, оценим стоимость и установим сроки вместе!
                     </p>
                     <button class="cta__content-button button start-btn" id="modal-btn2">Обсудить проект</button>

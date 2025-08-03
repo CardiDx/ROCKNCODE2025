@@ -1,0 +1,54 @@
+@import "mixins";
+@import "vars";
+
+.btn {
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+.btn.btn--light {
+    border-radius: 16px;
+
+    background-color: #E4E3DB;
+    color: #45483C;
+    font-weight: 500;
+
+    line-height: 100%;
+    font-size: 14px;
+    padding: 10px 12px;
+    letter-spacing: -0.03em;
+
+    &:hover {
+        background-color: #d8d8cb;
+    }
+
+    &:focus {
+        background-color: #d8d8cb;
+        outline: none;
+        border: 1px solid #1B1C17;
+    }
+
+    &:active {
+        background-color: #ccccbd;
+    }
+
+    &:disabled,
+    &[aria-disabled="true"] {
+        background-color: #e6e6dc;
+        color: #a3a3a3;
+        opacity: 0.6;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+
+    @include bp-md {
+        padding: 19px 32px;
+        font-size: 20px;
+    }
+}

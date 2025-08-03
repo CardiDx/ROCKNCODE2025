@@ -18,29 +18,6 @@ while (have_posts()) {
 
                     <li class="breadcrumb-item text-muted"><?php the_title(); ?></li>
                 </ol>
-                <?php /* 
-               <ol class="breadcrumb text-muted">
-                   <li class="breadcrumb-item">
-                       <a class="breadcrumb-item-link" href="<?php echo home_url(); ?>">Главная</a>
-                   </li>
-
-                   <?php if (is_category() || is_single()) : ?>
-                       <li class="breadcrumb-item">
-                           <a class="breadcrumb-item-link" href="<?php echo get_category_link(get_queried_object()->term_id); ?>">
-                               <?php single_cat_title(); ?>
-                           </a>
-                       </li>
-                   <?php endif; ?>
-
-                   <?php if (is_single()) : ?>
-                       <li class="breadcrumb-item text-muted"><?php the_title(); ?></li>
-                   <?php elseif (is_page()) : ?>
-                       <li class="breadcrumb-item text-muted"><?php the_title(); ?></li>
-                   <?php elseif (is_category()) : ?>
-                       <li class="breadcrumb-item text-muted"><?php single_cat_title(); ?></li>
-                   <?php endif; ?>
-               </ol>
-               */ ?>
 
                 <div class="article-head">
 
@@ -86,66 +63,51 @@ while (have_posts()) {
                         </ul>
                     </div>
                     <?php the_content(); ?>
-
-
                     <?php /*
-                   $similarPosts = get_field('post_similar');
-                   //                                echo count($similarPosts);
-                   if (isset($similarPosts) && count($similarPosts) > 0) {
-                   ?>
-                       <div class="other-article">
-                           <h3 class="title_size-3">Похожие статьи:</h3>
-                           <ul class="theme-list">
-                               <?php foreach ($similarPosts as $key => $similar) {
+                $similarPosts = get_field('post_similar');
+                //                                echo count($similarPosts);
+                if (isset($similarPosts) && count($similarPosts) > 0) {
+                ?>
+                    <div class="other-article">
+                        <h3 class="title_size-3">Похожие статьи:</h3>
+                        <ul class="theme-list">
+                            <?php foreach ($similarPosts as $key => $similar) {
 
-                                   //                                            echo '<pre>';
-                                   //                                            print_r($similar['post_similar_item']);
-                                   //                                            echo '</pre>';
-                               ?>
-                                   <li class="theme-list__item"><a class="article-link" href="<?= get_the_permalink($similar['post_similar_item']) ?>"><?= get_the_title($similar['post_similar_item']) ?></a></li>
-                               <?php } ?>
-                           </ul>
-                       </div>
-                   <?php } */ ?>
+                                //                                            echo '<pre>';
+                                //                                            print_r($similar['post_similar_item']);
+                                //                                            echo '</pre>';
+                            ?>
+                                <li class="theme-list__item"><a class="article-link" href="<?= get_the_permalink($similar['post_similar_item']) ?>"><?= get_the_title($similar['post_similar_item']) ?></a></li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                <?php } */ ?>
+
+
 
                 </div>
 
             </section>
 
-
-            <?php /*
-           <div class="sidebar-categories">
-               <ul class="sidebar-category-list">
-                   <?php
-                   // Получаем все категории
-                   $categories = get_categories(array(
-                       'orderby' => 'name',
-                       'order'   => 'ASC'
-                   ));
-
-                   // Для каждой категории выводим ссылку и иконку
-                   foreach ($categories as $category) :
-                       // Получаем ссылку на категорию
-                       $category_link = get_category_link($category->term_id);
-                       $category_name = $category->name;
-
-                       // Получаем иконку из ACF поля
-                       $category_icon = get_field('category_icon', 'category_' . $category->term_id); // 'category_icon' — это название поля
-
-                       // Если иконка не установлена, используем дефолтную иконку
-                       if (!$category_icon) {
-                           $category_icon = 'fa fa-folder'; // Или любую другую дефолтную иконку
-                       }
-                   ?>
-                       <li class="sidebar-category-item">
-                           <a href="<?php echo $category_link; ?>" class="sidebar-category-link">
-                               <i class="<?php echo esc_attr($category_icon); ?>"></i> <!-- Выводим иконку -->
-                               <?php echo $category_name; ?>
-                           </a>
-                       </li>
-                   <?php endforeach; ?>
-               </ul>
-           </div> */ ?>
+            <section class="cta" id="cta">
+                <div class="container">
+                    <div class="cta__wrapper">
+                        <div class="cta__image">
+                            <img class="cta__image-src"
+                                src="/wp-content/themes/style/img/cta/concept-mars-design-website.png"
+                                alt="concept-mars-design-website">
+                        </div>
+                        <div class="cta__content">
+                            <h2 class="cta__content-title title__h2">Сделаем ваши идеи реальностью!</h2>
+                            <p class="cta__content-desc">Давайте обсудим ваш проект, оценим стоимость и установим
+                                сроки вместе!
+                            </p>
+                            <button class="cta__content-button button start-btn" id="modal-btn2">Обсудить
+                                проект</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
 
         </div>

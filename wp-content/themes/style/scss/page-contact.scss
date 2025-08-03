@@ -32,7 +32,7 @@
     padding: 0;
     margin: 0;
 
-    li + li {
+    li+li {
       margin-top: 24px;
     }
   }
@@ -56,11 +56,19 @@
 
   &__form {
     flex: 1 1 55%;
+    background-color: #151515;
+    padding: 24px;
+    border-radius: 16px;
+    width: 100%;
+
+    @include bp-md {
+      padding: 40px;
+      border-radius: 24px;
+    }
 
     form {
       display: flex;
       flex-direction: column;
-      gap: 20px;
 
       input,
       textarea {

@@ -1,0 +1,232 @@
+/*====================================
+=============== HEADER ===============
+====================================*/
+
+.header {}
+
+// Navbar
+nav {
+    overflow: hidden;
+}
+
+.navbar-wrapper {
+    //position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    transition-duration: 0.3s;
+
+    width: 100%;
+    // backdrop-filter: blur(16px);
+    background-color: #070707;
+}
+
+.navbar-wrapper.--fixed {
+    position: fixed;
+    top: -100px;
+    //transition-duration: 3s;
+}
+
+.navbar-wrapper.--visible {
+    //top: 0px;
+    background: hsla(0, 0%, 0%, 1);
+    // box-shadow: 0 0.0625em 0.5em rgba(0, 0, 0, 0.3);
+    transition-duration: 0.3s;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 24px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 24px;
+    padding: 16px 60px 16px 60px;
+
+    @media (max-width: $breakpoint992) {
+        padding: 24px $containerSidePadding + px 24px;
+    }
+}
+
+.logo {
+    z-index: 102;
+
+    a {
+        color: white;
+
+        img {
+            @media (max-width: $breakpoint480) {
+                height: 24px;
+            }
+        }
+    }
+}
+
+.menu {
+    display: flex;
+    gap: 40px;
+    // margin-right: 90px;
+
+    @media (max-width: $breakpoint1450) {
+        gap: 32px;
+    }
+
+    @media (max-width: $breakpoint768) {
+        gap: 24px;
+    }
+
+    // .menu-item
+    &-item {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 150%;
+        letter-spacing: -0.03em;
+        color: #E4E3DB;
+        line-height: 30px;
+        display: inline-block;
+        padding: 7px;
+
+        @media (max-width: $breakpoint1450) {
+            font-size: 18px;
+        }
+
+        // .menu-item-link
+        a {
+            color: white;
+            transition: all 0.4s;
+
+            &:hover {
+                color: $greenHover;
+            }
+        }
+    }
+
+
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+// Burger menu styles
+@media screen and (max-width: $burgerBreakpoint) {
+
+    // .menu
+    .menu {
+        position: fixed;
+        background-color: #1b1c17;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: 100vw;
+        display: none;
+
+        &.active {
+            display: flex;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            width: 100vw;
+            flex-direction: column;
+            pointer-events: all;
+            justify-content: flex-start;
+            align-items: center;
+            z-index: 12;
+            animation: fade 0.1s linear;
+            gap: 16px;
+        }
+    }
+
+    // .burger
+    .burger {
+        display: block;
+        position: relative;
+        height: 20px;
+        width: 30px;
+        z-index: 13;
+        cursor: pointer;
+        transform: scale(0.8);
+        transform-origin: center;
+
+        &.active-burger {
+            &:before {
+                background: $burgerActiveColor;
+                transform: rotate(45deg);
+                transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+                top: 8px;
+            }
+
+            &:after {
+                background: $burgerActiveColor;
+                transform: rotate(-45deg);
+                bottom: 10px;
+                transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+            }
+
+            & span {
+                transform: scale(0);
+            }
+        }
+
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: $burgerColor;
+            transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+        }
+
+        &:before {
+            top: 0;
+        }
+
+        &::after {
+            bottom: 0;
+        }
+
+        span {
+            position: absolute;
+            top: 9px;
+            right: 0;
+            width: 100%;
+            background: $burgerColor;
+            height: 2px;
+            transform: scale(1);
+            transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+        }
+    }
+
+    .menu {
+        padding: 80px 18px 0;
+    }
+
+    // .menu__item
+    .menu-item {
+        //margin-top: 15px;
+        width: 100%;
+        padding: 7px;
+        border-bottom: 1px solid #45483c;
+
+        // .menu__link
+        a {
+            color: white;
+            font-style: normal;
+            font-size: 16px;
+            display: block;
+        }
+    }
+
+
+}
+
+.dnone {
+    display: none !important;
+}

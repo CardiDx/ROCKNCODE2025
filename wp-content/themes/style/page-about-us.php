@@ -1,60 +1,48 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Template Name: About Page
+ */
+get_header();
+?>
 
-    <div class="page-about">
+<main class="about">
+    <section class="about__hero">
         <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-12">
-                    <div class="breadcrumbs">
-                        <ul class="breadcrumbs__list">
-                            <li class="breadcrumbs__item"><a class="breadcrumbs__item-link" href="#">главная</a></li>
-                            <li class="breadcrumbs__item"><a class="breadcrumbs__item-link breadcrumbs_active" href="#">об
-                                    авторе</a></li>
-                        </ul>
-                    </div>
-                    <h2 class="main__title">Об <span class="highlighted">авторе</span></h2>
-                </div>
+            <ol class="breadcrumb text-muted">
+                <li class="breadcrumb-item">
+                    <a class="breadcrumb-item-link" href="<?php echo home_url(); ?>">Главная</a>
+                </li>
+
+                <li class="breadcrumb-item text-muted"><?php the_title(); ?></li>
+            </ol>
+            <h1 class="about__title">О компании Rockncode</h1>
+            <p class="about__text">
+                Нам доверяют стартапы, e-commerce-компании, медтех и игровые платформы. И мы гордимся тем, что
+                большинство клиентов приходят по рекомендации — за качеством, за ответственностью и за честной работой
+                без воды.
+            </p>
+        </div>
+    </section>
+
+    <section class="about__who">
+        <div class="container about__who-inner">
+            <div class="about__who-left">
+                <h2 class="about__subtitle">Кто мы?<br><span>и почему нам доверяют клиенты</span></h2>
+            </div>
+            <div class="about__who-right">
+                <p class="about__desc">
+                    Молодая студия, специализирующаяся на UX-дизайне и разработке интерфейсов под ключ. Разрабатываем
+                    сайты для e-commerce, медицинских платформ и игровых сервисов.
+                </p>
+                <ul class="about__benefits">
+                    <li>Фиксированные цены, которые известны до начала работы</li>
+                    <li>Уникальность, которая поможет выделиться среди конкурентов</li>
+                    <li>Чистота и адекватность на любой стадии разработки проекта</li>
+                </ul>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <!--content-text-->
-                <div class="col-12 col-md-9">
-                    <div class="about__meet">
-                        <div class="about__wrap-img-me">
-                            <img src="/wp-content/themes/style/img/elena-belyaeva.jpg" alt="elena belyaeva">
-                        </div>
-                        <div class="about__info-text">
-                            <h3 class="about__name-text">Елена Беляева</h3>
-                            <span class="about__role">Стилист, модельер и преподаватель</span>
-                            <p class="about__history-me">
-                                <?php the_field('about_intro');?>
-                            </p>
-                        </div>
-                    </div>
-
-                    <?php
-                    $about_theses = get_field('about_theses');
-                    if(isset( $about_theses ) && !empty( $about_theses )) {
-                        ?>
-                        <ul class="role__list">
-                            <?php foreach ($about_theses as $about_thesis) { ?>
-                                <li><?= $about_thesis['about_thesis']; ?></li>
-                            <?php } ?>
-                        </ul>
-                    <?php } ?>
-
-                    <h2 class="main__title">Моя <span class="highlighted">история</span></h2>
-                    <article class="about-story-me">
-                        <?php the_content(); ?>
-                    </article>
-
-
-                </div>
-                <!--sidebar-->
-                <?php get_sidebar(); ?>
-            </div>
-        </div>
-    </div>
+    </section>
+</main>
 
 
 <?php get_footer(); ?>

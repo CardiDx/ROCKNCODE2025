@@ -77,41 +77,54 @@ const swiper = new Swiper(".swiper-testimonials", {
 
 // Модальное окно заказа
 
-const modalBtn = document.getElementById("modal-btn");
-const modalBtn2 = document.getElementById("modal-btn2");
-const modal = document.getElementById("modal");
-const overlay = document.querySelector(".overlay");
-const closeBtn = document.querySelector(".modal__close");
-
-modalBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  modal.style.right = "0";
-  overlay.style.display = "block";
-  overlay.style.zIndex = "10";
-});
-
-modalBtn2.addEventListener("click", (e) => {
-  e.preventDefault();
-  modal.style.right = "0";
-  overlay.style.display = "block";
-  overlay.style.zIndex = "10";
-});
-
-overlay.addEventListener("click", () => {
-  modal.style.right = "-110vw";
-  overlay.style.display = "none";
-});
-closeBtn.addEventListener("click", () => {
-  modal.style.right = "-110vw";
-  overlay.style.display = "none";
-});
-
-addEventListener("scroll", (event) => {
+document.addEventListener("DOMContentLoaded", function () {
+  const modalBtn = document.getElementById("modal-btn");
+  const modalBtn2 = document.getElementById("modal-btn2");
+  const modal = document.getElementById("modal");
+  const overlay = document.querySelector(".overlay");
+  const closeBtn = document.querySelector(".modal__close");
   const navWrapper = document.querySelector(".navbar-wrapper");
-  if (window.scrollY < 10) {
-    navWrapper.classList.remove("--visible");
-  } else {
-    navWrapper.classList.add("--visible");
+
+  if (modalBtn && modal && overlay) {
+    modalBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      modal.style.right = "0";
+      overlay.style.display = "block";
+      overlay.style.zIndex = "10";
+    });
+  }
+
+  if (modalBtn2 && modal && overlay) {
+    modalBtn2.addEventListener("click", (e) => {
+      e.preventDefault();
+      modal.style.right = "0";
+      overlay.style.display = "block";
+      overlay.style.zIndex = "10";
+    });
+  }
+
+  if (overlay && modal) {
+    overlay.addEventListener("click", () => {
+      modal.style.right = "-110vw";
+      overlay.style.display = "none";
+    });
+  }
+
+  if (closeBtn && modal && overlay) {
+    closeBtn.addEventListener("click", () => {
+      modal.style.right = "-110vw";
+      overlay.style.display = "none";
+    });
+  }
+
+  if (navWrapper) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY < 10) {
+        navWrapper.classList.remove("--visible");
+      } else {
+        navWrapper.classList.add("--visible");
+      }
+    });
   }
 });
 
